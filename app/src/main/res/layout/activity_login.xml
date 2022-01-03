@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/iv_ttareung_background33"
+
+    tools:context=".src.main.MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_ttareung_logo"
+        android:layout_marginTop="90dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/iv_ttareung_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="아이디"
+        android:inputType="text"
+        android:paddingBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_ttareung_logo"
+        tools:ignore="HardcodedText"/>
+
+    <EditText
+        android:id="@+id/et_pw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호"
+        android:inputType="text"
+        android:paddingBottom="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_id"
+        tools:ignore="HardcodedText"/>
+
+    <CheckBox
+        android:id="@+id/check_box_login"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:button="@null"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintTop_toBottomOf="@id/et_pw"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/custom_checkbox" />
+
+    <TextView
+        android:id="@+id/tv_auto_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/et_pw"
+        app:layout_constraintStart_toEndOf="@id/check_box_login"
+        android:layout_marginTop="17dp"
+        android:layout_marginStart="5dp"
+        android:text="자동 로그인"
+        android:textSize="15dp"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/bt_other_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/et_pw"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="bottom"
+        android:text="다른 로그인 방법"
+        android:drawableEnd="@drawable/ib_arrow"
+        android:background="#00ff0000"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp" />
+
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_auto_login"
+        android:text="로그인"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:backgroundTint="#31e091"
+        android:layout_margin="40dp"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linear_findidpw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/bt_login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+        <Button
+            android:id="@+id/bt_find_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디 찾기"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:paddingEnd="10dp"
+            android:background="#00ff0000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|"
+
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:layout_marginTop="2dp" />
+
+        <Button
+            android:id="@+id/bt_find_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="비밀번호 찾기"
+            android:background="#00ff0000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:layout_marginTop="2dp"/>
+
+        <Button
+            android:id="@+id/bt_sign"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원가입"
+            android:background="#00ff0000"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <ImageButton
+        android:id="@+id/ib_login_naver"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="110dp"
+        app:layout_constraintTop_toBottomOf="@id/linear_findidpw"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ib_login_kakao"
+        android:background="@drawable/circle"
+        android:src="@drawable/ib_login_naver" />
+
+    <ImageButton
+        android:id="@+id/ib_login_kakao"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="110dp"
+        app:layout_constraintTop_toBottomOf="@id/linear_findidpw"
+        app:layout_constraintStart_toEndOf="@id/ib_login_naver"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/circle"
+        android:src="@drawable/ib_login_kakao" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

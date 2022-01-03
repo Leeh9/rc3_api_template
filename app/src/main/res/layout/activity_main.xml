@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".src.main.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_main_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_menu"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="메뉴"
+            android:textSize="12sp"
+            android:drawableTop="@drawable/ib_menu"
+            android:textColor="@color/black"
+            android:background="#00ff0000" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <Button
+            android:id="@+id/bt_search"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="검색"
+            android:textSize="12sp"
+            android:drawableTop="@drawable/ib_search"
+            android:textColor="@color/black"
+            android:background="#00ff0000" />
+        <Button
+            android:id="@+id/bt_mypage"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="내정보"
+            android:textSize="12sp"
+            android:drawableTop="@drawable/ib_mypage"
+            android:textColor="@color/black"
+            android:background="#00ff0000" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="따릉이"
+        android:textSize="12sp"
+        android:gravity="top|center"
+        android:drawableTop="@drawable/iv_ttareung_logo2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#0D298F"
+        android:background="#00ff0000" />
+
+    <View
+        android:background="#808080"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_main_top"
+        android:layout_height="1dp" />
+
+    <TextView
+        android:id="@+id/tv_notice"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="공지 : 폭설로 인한 따릉이 이용자제 안내"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:gravity="center|start"
+        android:layout_marginStart="30dp"
+        app:layout_constraintTop_toBottomOf="@id/layout_main_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:background="#808080"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_notice"
+        android:layout_height="1dp" />
+
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_notice"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav" />
+
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        app:menu="@menu/bottom_nav_menu"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/framelayout"
+        app:itemIconTint="@drawable/menu_selector_color"
+        app:itemTextColor="@drawable/menu_selector_color"
+        android:background="@color/white"
+        app:itemIconSize="25dp"  >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ib_buy_ticket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이용권 구매"
+            android:textColor="@color/white"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:drawableStart="@drawable/icon_buy_ticket"
+            android:drawablePadding="2dp"
+            android:background="@drawable/button_round"
+            android:backgroundTint="#FF1AC87A"
+            android:layout_gravity="center"
+            tools:ignore="HardcodedText" />
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
