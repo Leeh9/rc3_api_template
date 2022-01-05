@@ -1,6 +1,10 @@
 package com.example.rc3_api_template.src.main
 
+import android.content.pm.PackageInfo
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Base64
+import android.util.Log
 import com.example.rc3_api_template.databinding.ActivityMainBinding
 import com.example.rc3_api_template.R
 import com.example.rc3_api_template.config.BaseActivity
@@ -8,6 +12,8 @@ import com.example.rc3_api_template.src.main.fav.FavFragment
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.rc3_api_template.src.main.map.MapFragment
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {

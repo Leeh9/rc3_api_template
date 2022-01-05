@@ -1,4 +1,4 @@
-package com.example.rc3_api_template.src.main.bike.models
+package com.example.rc3_api_template.src.main.map.models
 
 import com.google.gson.annotations.SerializedName
 
