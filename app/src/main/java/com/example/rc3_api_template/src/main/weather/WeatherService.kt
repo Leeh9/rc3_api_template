@@ -9,7 +9,7 @@ import retrofit2.Response
 class WeatherService (val weatherActivityInterface: WeatherActivityInterface) {
 
     fun tryGetWeather(city : String, key : String){
-        val weatherRetrofitInterface = ApplicationClass.sRetrofit.create(WeatherRetrofitInterface::class.java)
+        val weatherRetrofitInterface = ApplicationClass.sRetrofit2.create(WeatherRetrofitInterface::class.java)
         weatherRetrofitInterface.getWeather(city, key).enqueue(object : Callback<WeatherResponse> {
             override fun onResponse(call: Call<WeatherResponse>, response: Response<WeatherResponse>) {
                 weatherActivityInterface.onGetWeatherSuccess(response.body() as WeatherResponse)

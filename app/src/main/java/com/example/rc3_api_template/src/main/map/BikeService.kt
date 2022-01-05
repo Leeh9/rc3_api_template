@@ -10,7 +10,7 @@ import retrofit2.Response
 class BikeService (val mapFragmentInterface: MapFragmentInterface) {
 
     fun tryGetBike(mapView: MapView){
-        val bikeRetrofitInterface = ApplicationClass.sRetrofit2.create(BikeRetrofitInterface::class.java)
+        val bikeRetrofitInterface = ApplicationClass.sRetrofit.create(BikeRetrofitInterface::class.java)
         bikeRetrofitInterface.getBike(mapView).enqueue(object : Callback<BikeResponse> {
             override fun onResponse(call: Call<BikeResponse>, response: Response<BikeResponse>) {
                 mapFragmentInterface.onGetBikeSuccess(response.body() as BikeResponse, mapView)

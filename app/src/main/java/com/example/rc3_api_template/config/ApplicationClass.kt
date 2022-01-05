@@ -12,8 +12,9 @@ import java.util.concurrent.TimeUnit
 // 앱이 실행될때 1번만 실행이 됩니다.
 class ApplicationClass : Application() {
 
-    val API_URL = "https://api.openweathermap.org/data/2.5/"
-    val API_URL2 = "http://openapi.seoul.go.kr:8088/72466678726775733131375451705a47/json/bikeList/1/1000/"
+    val API_URL = "http://openapi.seoul.go.kr:8088/72466678726775733131375451705a47/json/bikeList/1/1000/"
+    val API_URL2 = "https://api.openweathermap.org/data/2.5/"
+
     // val API_URL = "https://members.softsquared.com/"
 
     // 테스트 서버 주소
