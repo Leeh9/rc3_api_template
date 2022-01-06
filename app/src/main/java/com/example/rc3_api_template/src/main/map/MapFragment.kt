@@ -162,10 +162,13 @@ class MapFragment : BaseFragment<FragmentMapBinding>(FragmentMapBinding::bind, R
         // 줌 레벨 변경
         mapView.setZoomLevel(4, true)
 
-        showLoadingDialog(requireContext())
-        BikeService(this).tryGetBike(mapView)
+//        showLoadingDialog(requireContext())
+//        BikeService(this).tryGetBike(mapView)
 
-
+        binding.ibCurLoc.setOnClickListener {
+            showLoadingDialog(requireContext())
+            BikeService(this).tryGetBike(mapView)
+        }
         binding.ibWeather.setOnClickListener {
             activity?.let{
                 val intent = Intent(context, WeatherActivity::class.java)
