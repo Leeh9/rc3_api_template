@@ -9,16 +9,16 @@ import retrofit2.Response
 class WeatherService (val weatherActivityInterface: WeatherActivityInterface) {
 
     fun tryGetWeather(city : String, key : String){
-//        val weatherRetrofitInterface = ApplicationClass.sRetrofit2.create(WeatherRetrofitInterface::class.java)
-//        weatherRetrofitInterface.getWeather(city, key).enqueue(object : Callback<WeatherResponse> {
-//            override fun onResponse(call: Call<WeatherResponse>, response: Response<WeatherResponse>) {
-//                weatherActivityInterface.onGetWeatherSuccess(response.body() as WeatherResponse)
-//            }
-//
-//            override fun onFailure(call: Call<WeatherResponse>, t: Throwable) {
-//                weatherActivityInterface.onGetWeatherFailure(t.message ?: "통신 오류")
-//            }
-//        })
+        val weatherRetrofitInterface = ApplicationClass.sRetrofit2.create(WeatherRetrofitInterface::class.java)
+        weatherRetrofitInterface.getWeather(city, key).enqueue(object : Callback<WeatherResponse> {
+            override fun onResponse(call: Call<WeatherResponse>, response: Response<WeatherResponse>) {
+                weatherActivityInterface.onGetWeatherSuccess(response.body() as WeatherResponse)
+            }
+
+            override fun onFailure(call: Call<WeatherResponse>, t: Throwable) {
+                weatherActivityInterface.onGetWeatherFailure(t.message ?: "통신 오류")
+            }
+        })
     }
 
 }
